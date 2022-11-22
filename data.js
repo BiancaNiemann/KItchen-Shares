@@ -32,8 +32,7 @@ export const meals = [
         ],
         notes: [
             'I normally use Penne',
-            'You can use the mushroom liquid for a stock or sauce, or add it to the cream and milk for the',
-            'mac n cheese. Umami flavours are always great.',
+            'You can use the mushroom liquid for a stock or sauce, or add it to the cream and milk for the mac n cheese. Umami flavours are always great.',
             'Must admit, adding sliced green pepper along with the onions allows for a warm Italian flavour.'
         ]
     },
