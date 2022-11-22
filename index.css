@@ -1,0 +1,107 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Quicksand', sans-serif;
+    background-color: #BCB8B1;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    color: #E0AFA0;
+    text-shadow: 0px 0px 5px #463F3A;
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    font-size: 6rem;
+    margin-top: 1.5rem ;
+    margin-bottom: 0.5rem;
+}
+
+.birdy {
+    width: 100px;
+    height: 100px;
+    margin-top: 2.5rem ;
+    border-radius: 50%;
+}
+
+.container{
+    border: 0.35rem solid #8A817C;
+    width: 750px;
+    margin: 0 auto 1.5rem auto;
+    border-radius: 10px;
+    background-color: #F4F3EE;
+}
+
+.top-bar{
+    position: relative;
+}
+
+.image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-bottom: 0.25rem solid #8A817C;
+}
+
+.meal-info{
+    display: flex;
+    border-bottom: 0.25rem solid #8A817C;
+}
+
+.header {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+}
+
+h3 {
+    margin-top: 0;
+    color: #F4F3EE;
+    font-size: 2.5rem;
+    text-shadow: 0px 0px 5px black;
+}
+
+h4 {
+    color: #E0AFA0;
+    font-size: 1.5rem;
+    padding-left:15px;
+    margin-bottom: 0.5rem;
+}
+
+
+.ingredients {
+    border-right: 0.25rem solid #8A817C;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+ul {
+    width: 200px;
+}
+
+ul, ol {
+    color: #8A817C;
+}
+
+.ingredient, .instruction {
+    margin-bottom: 1.5rem;
+}
+
+.instructions{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.notes {
+    list-style-type: circle;
+    width: 90%;
+    margin-left: 1.5rem;
+    margin-top: 0;
+}
