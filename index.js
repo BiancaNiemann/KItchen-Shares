@@ -41,7 +41,7 @@ function getMealType(){
                     <ol>${instruction}</ol>
                     </div>
                 </div>
-                <h4>Notes</h4>
+                <h4 class="note-name">Notes</h4>
                 <ul class="notes">${note}</ul>
            </div>
         ` 

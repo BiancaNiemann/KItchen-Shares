@@ -75,7 +75,6 @@ h4 {
     margin-bottom: 0.5rem;
 }
 
-
 .ingredients {
     border-right: 0.25rem solid #8A817C;
     padding-left: 1rem;
@@ -104,4 +103,10 @@ ul, ol {
     width: 90%;
     margin-left: 1.5rem;
     margin-top: 0;
+}
+
+.note-name {
+    text-align: center;
+    margin-top: 0.5rem;
+    text-decoration: underline;
 }
