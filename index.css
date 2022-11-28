@@ -47,6 +47,7 @@ h1 {
     height: 300px;
     object-fit: cover;
     border-bottom: 0.25rem solid #8A817C;
+    border-radius: 10px;
 }
 
 .meal-info{

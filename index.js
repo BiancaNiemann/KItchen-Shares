@@ -1,8 +1,9 @@
 import { meals } from '/data.js'
 
-
 const mealName = document.getElementById('meal-name')
-
+//const mealSelector = document.getElementById('meal-selector')
+//mealSelector.innerHtml = `<h1>test</h1>`
+    
 function getMealType(){
     let mealHtml = ''
     
