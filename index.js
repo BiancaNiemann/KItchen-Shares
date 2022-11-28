@@ -16,7 +16,6 @@ function handleSelectClick(mealId){
     document.getElementById("meal-type-selections").classList.toggle('hidden')
     document.getElementById("container").classList.toggle('hidden')
     
-    getMealType(mealId)
 }
 
 //HANDLE CHANGE ON CLICK OF BACK BUTTON
@@ -103,7 +102,7 @@ function getMealType(){
             return `<li>${noted}</li>`
         }).join('')
 
-
+        
         mealHtml += `
             <div class='container hidden' id="container">
                 <div class="top-bar">
