@@ -23,6 +23,26 @@ h1 {
     margin-bottom: 0.5rem;
 }
 
+h3 {
+    margin-top: 0;
+    color: #F4F3EE;
+    font-size: 2.5rem;
+    text-shadow: 0px 0px 5px black;
+}
+
+h4 {
+    color: #E0AFA0;
+    font-size: 1.5rem;
+    padding-left:15px;
+    margin-bottom: 0.5rem;
+}
+
+h5 {
+    color: #463F3A;
+    margin : auto 0;
+    font-size: 1.2rem
+}
+
 .birdy {
     width: 100px;
     height: 100px;
@@ -31,6 +51,7 @@ h1 {
 }
 
 .container{
+    /*display: none; /*block or none*/
     border: 0.35rem solid #8A817C;
     width: 750px;
     margin: 0 auto 1.5rem auto;
@@ -38,8 +59,41 @@ h1 {
     background-color: #F4F3EE;
 }
 
+.ontop{
+    display: flex; /*flex or none*/
+    width: 50%;
+    height: auto;
+    margin: 20px auto 10px auto ;
+    background-color: #F4F3EE;
+    border: 0.25rem solid #E0AFA0;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.meal-type{
+    text-align: center;
+    color: #8A817C;
+    text-shadow: 0px 0px 0px black;
+}
+
 .top-bar{
     position: relative;
+}
+
+.thumbnail{
+    width: 50px;
+    height: 50px;
+    margin: 20px;
+    border: 0.25rem solid #8A817C;
+    border-radius: 10px;
+}
+
+.thumbnail-name{
+    color: #463F3A;
+}
+
+.thumbnail-name:hover{
+    color: #E0AFA0;
 }
 
 .image {
@@ -62,18 +116,17 @@ h1 {
     text-align: center;
 }
 
-h3 {
-    margin-top: 0;
-    color: #F4F3EE;
-    font-size: 2.5rem;
-    text-shadow: 0px 0px 5px black;
-}
-
-h4 {
-    color: #E0AFA0;
-    font-size: 1.5rem;
-    padding-left:15px;
-    margin-bottom: 0.5rem;
+.go-back{
+    position: absolute;
+    top: 10px;
+    margin-left: 650px;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: inherit;
+    color:#8A817C;
+    font-weight: bold;
+    background-color: #E0AFA0
 }
 
 .ingredients {
@@ -110,4 +163,8 @@ ul, ol {
     text-align: center;
     margin-top: 0.5rem;
     text-decoration: underline;
+}
+
+.hidden{
+    display: none;
 }

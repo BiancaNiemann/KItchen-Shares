@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
+
 export const meals = [
     {
         name: "Oma's Mac n Cheese",
@@ -34,7 +36,8 @@ export const meals = [
             'I normally use Penne',
             'You can use the mushroom liquid for a stock or sauce, or add it to the cream and milk for the mac n cheese. Umami flavours are always great.',
             'Must admit, adding sliced green pepper along with the onions allows for a warm Italian flavour.'
-        ]
+        ],
+        uuid: uuidv4()
     },
     {
         name: "Dinky's Snail shaped pasta with tomato and Lamb or Mutton",
@@ -78,7 +81,8 @@ export const meals = [
             'Balsamic vinegar gives a better balance, but was not readily available back then',
             'Parmesan and Cilantro or Parsley to top the dish, also modern, but delicious',
             'Could use rigatoni, penne or other pasta shape that will hold the sauce'
-        ]
+        ],
+        uuid: uuidv4()
     },
     {
         name: "80's Chicken Curry",
@@ -113,7 +117,8 @@ export const meals = [
         ],
         notes: [
             'Simple to the max, but honestly, really good, and not too spicy, so even the kids enjoyed the curry'
-        ]
+        ],
+        uuid: uuidv4()
     },
     {
         name: "80's Beef Stew",
@@ -147,7 +152,68 @@ export const meals = [
         notes: [
             'This dinner really went down well, even though it did not have the finesse of a modern stew. No garlic, no parsley, just good old fashioned comfort food.',
             'If I made chicken stew, the process was much the same, just that cooking time on the chicken pieces was a little shorter. (Never thought of chicken fillets back then, just good old braai chicken pieces). Instead of only water, I did add milk as well, when adding in the Chicken or Tomato soup and sometimes added dried Thyme'
-        ]
+        ],
+        uuid: uuidv4()
+    },
+    {
+        name: "Breakfast Oat Bake",
+        mealType: "breakfast",
+        mealSearch: ['oats', 'bananas', 'apple'],
+        isVege : true,
+        image:"oats.jpg",
+        alt: "Bowls of oats",
+        ingredients: [
+            '2 cups Oats',
+            '1 cup Milk',
+            '2 eggs',
+            '2 ripe bananas mashed',
+            '1 apple grated'
+        ],
+        instructions:[
+            'Mix all ingredients together',
+            "bake at 180 deg for 30min"
+
+        ],
+        notes: [
+            "I like to serve this with a bit of milk or plain yoghurt on top"
+        ],
+        uuid: uuidv4()
+    },
+    {
+        name: "Dessert 1",
+        mealType: "dessert",
+        mealSearch: [],
+        isVege : "",
+        image:"",
+        alt: " ",
+        ingredients: [
+
+        ],
+        instructions:[
+
+        ],
+        notes: [
+
+        ],
+        uuid: uuidv4()
+    },
+    {
+        name: "salad 1",
+        mealType: "salad",
+        mealSearch: [],
+        isVege : "",
+        image:"",
+        alt: " ",
+        ingredients: [
+
+        ],
+        instructions:[
+
+        ],
+        notes: [
+
+        ],
+        uuid: uuidv4()
     },
     {
         name: "",
@@ -164,24 +230,8 @@ export const meals = [
         ],
         notes: [
 
-        ]
+        ],
+        uuid: uuidv4()
     },
-    {
-        name: "",
-        mealType: "",
-        mealSearch: [],
-        isVege : "",
-        image:"",
-        alt: " ",
-        ingredients: [
-
-        ],
-        instructions:[
-
-        ],
-        notes: [
-
-        ]
-    }
 ]
 

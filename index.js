@@ -1,9 +1,86 @@
 import { meals } from '/data.js'
 
-const mealName = document.getElementById('meal-name')
-//const mealSelector = document.getElementById('meal-selector')
-//mealSelector.innerHtml = `<h1>test</h1>`
+//EVENT LISTENERS
+document.addEventListener('click', function(e){
+    if(e.target.dataset.select){
+        handleSelectClick(e.target.dataset.select)
+    }
+    else if (e.target.id = "go-back"){
+        handleBackBtn()
+    }
+})
+
+//HANDLE CHANGE ON CLICK OF MENU ITEM
+function handleSelectClick(mealId){
     
+    document.getElementById("meal-type-selections").classList.toggle('hidden')
+    document.getElementById("container").classList.toggle('hidden')
+    
+    getMealType(mealId)
+}
+
+//HANDLE CHANGE ON CLICK OF BACK BUTTON
+function handleBackBtn(){
+    document.getElementById("meal-type-selections").classList.toggle('hidden')
+    document.getElementById("container").classList.toggle('hidden')
+}
+
+//MEAL SELECTION MENU
+function mealMenu(){
+    let bfast = ''
+    let salad = ''
+    let main = ''
+    let dessert = ''
+    
+    
+    for (let meal of meals){
+        if (meal.mealType === 'main'){
+            main += `
+            <div class="ontop" >
+                <img src="./images/${meal.image}" alt="${meal.alt}" class="thumbnail">
+                <h5 class="thumbnail-name" id="select-${meal.uuid}" data-select="${meal.uuid}">${meal.name}</h5>
+            </div>
+            `
+
+        }
+        else if (meal.mealType === 'breakfast'){
+            bfast += `
+            <div class="ontop" >
+                <img src="./images/${meal.image}" alt="${meal.alt}" class="thumbnail">
+                <h5 class="thumbnail-name" id="select-${meal.uuid}" data-select="${meal.uuid}">${meal.name}</h5>
+            </div>
+            `
+        }
+        else if (meal.mealType === 'salad'){
+            salad += `
+            <div class="ontop" >
+                <img src="./images/${meal.image}" alt="${meal.alt}" class="thumbnail">
+                <h5 class="thumbnail-name" id="select-${meal.uuid}" data-select="${meal.uuid}">${meal.name}</h5>
+            </div>
+            `
+        }
+        else if (meal.mealType = 'dessert'){
+            dessert += `
+            <div class="ontop" >
+                <img src="./images/${meal.image}" alt="${meal.alt}" class="thumbnail">
+                <h5 class="thumbnail-name" id="select-${meal.uuid}" data-select="${meal.uuid}">${meal.name}</h5>
+            </div>
+            `
+        }
+    }
+
+    document.getElementById('breakfast').innerHTML += bfast
+
+    document.getElementById('salad').innerHTML += salad
+
+    document.getElementById('mainMeal').innerHTML += main
+
+    document.getElementById('dessert').innerHTML += dessert
+   
+}
+mealMenu()
+
+//RENDERS FULL RECIPE    
 function getMealType(){
     let mealHtml = ''
     
@@ -26,10 +103,12 @@ function getMealType(){
             return `<li>${noted}</li>`
         }).join('')
 
+
         mealHtml += `
-            <div class='container'>
+            <div class='container hidden' id="container">
                 <div class="top-bar">
                     <h3 class="header">${meal.name}</h3>
+                    <button class="go-back" id="go-back">Go back</button>
                     <img class="image" src="./images/${meal.image}" alt="${meal.alt}"/>
                 </div>
                 <div class="meal-info">
@@ -49,7 +128,7 @@ function getMealType(){
    }
 
     
-    mealName.innerHTML = mealHtml
+   document.getElementById('meal-name').innerHTML = mealHtml
 }
 
 getMealType()
