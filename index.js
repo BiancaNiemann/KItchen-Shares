@@ -1,11 +1,12 @@
 import { meals } from '/data.js'
 
+
 //EVENT LISTENERS
 document.addEventListener('click', function(e){
     if(e.target.dataset.select){
         handleSelectClick(e.target.dataset.select)
     }
-    else if (e.target.id = "go-back"){
+    else if (e.target.id === "go-back"){
         handleBackBtn()
     }
 })
@@ -14,14 +15,20 @@ document.addEventListener('click', function(e){
 function handleSelectClick(mealId){
     
     document.getElementById("meal-type-selections").classList.toggle('hidden')
-    document.getElementById("container").classList.toggle('hidden')
+    document.getElementById("meal-name").classList.toggle('hidden')
     
+    meals.forEach(meal => {
+        if (meal.uuid === mealId){
+            getMealType(mealId)
+            console.log(meal.uuid, mealId)
+        }
+    })
 }
 
 //HANDLE CHANGE ON CLICK OF BACK BUTTON
 function handleBackBtn(){
     document.getElementById("meal-type-selections").classList.toggle('hidden')
-    document.getElementById("container").classList.toggle('hidden')
+    document.getElementById("meal-name").classList.toggle('hidden')
 }
 
 //MEAL SELECTION MENU
@@ -80,11 +87,15 @@ function mealMenu(){
 mealMenu()
 
 //RENDERS FULL RECIPE    
-function getMealType(){
+function getMealType(mealId){
     let mealHtml = ''
+    let newMeal = ''
     
-    for (let meal of meals){
-
+    meals.filter(meal =>{
+        if (meal.uuid === mealId){
+           
+            
+       
         let ingredientsArray = meal.ingredients
         let ingredient = ingredientsArray.map((type) => {
             return `<li  class="ingredient">${type}</li>`
@@ -104,7 +115,7 @@ function getMealType(){
 
         
         mealHtml += `
-            <div class='container hidden' id="container">
+            <div class="container " id="container">
                 <div class="top-bar">
                     <h3 class="header">${meal.name}</h3>
                     <button class="go-back" id="go-back">Go back</button>
@@ -124,14 +135,13 @@ function getMealType(){
                 <ul class="notes">${note}</ul>
            </div>
         ` 
-   }
-
+        
+        
+    }
+    document.getElementById('meal-name').innerHTML = mealHtml
+    })
+        
     
-   document.getElementById('meal-name').innerHTML = mealHtml
-}
+    }
 
 getMealType()
-
-
-
-

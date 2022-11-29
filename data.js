@@ -184,7 +184,7 @@ export const meals = [
         mealType: "dessert",
         mealSearch: [],
         isVege : "",
-        image:"",
+        image:"apple-cake.jpg",
         alt: " ",
         ingredients: [
 
@@ -202,7 +202,7 @@ export const meals = [
         mealType: "salad",
         mealSearch: [],
         isVege : "",
-        image:"",
+        image:"GreekSalad.jpg",
         alt: " ",
         ingredients: [
 
