@@ -46,8 +46,8 @@ function handleVegeClick(ticked){
             return meal
         }
    })
+   
    //MEAL SELECTION MENU
-
     let bfast = ''
     let salad = ''
     let main = ''
@@ -96,9 +96,7 @@ function handleVegeClick(ticked){
     document.getElementById('mainMeal').innerHTML = main
 
     document.getElementById('dessert').innerHTML = dessert
-   
 
-   console.log(matchVege)
 }
 
 //RENDERS FULL RECIPE    
