@@ -240,7 +240,6 @@ export const meals = [
             'Press mixture into a tart pan',
             'Bake for about 12-15 minutes, till a light brown',
             'Remove from oven and allow to cool completely',
-            '',
             'Boil together Milk and Butter',
             'Mix eggs, sugar, cornflour and flour',
             'Stir mixture into the milk and boil slowly for 10 minutes stirring continuously(NB)',
