@@ -183,7 +183,7 @@ export const meals = [
         name: "Dessert 1",
         mealType: "dessert",
         mealSearch: [],
-        isVege : "",
+        isVege : true,
         image:"apple-cake.jpg",
         alt: " ",
         ingredients: [
@@ -201,7 +201,7 @@ export const meals = [
         name: "salad 1",
         mealType: "salad",
         mealSearch: [],
-        isVege : "",
+        isVege : true,
         image:"GreekSalad.jpg",
         alt: " ",
         ingredients: [
@@ -216,6 +216,48 @@ export const meals = [
         uuid: uuidv4()
     },
     {
+        name: "Uncle Rolys yummy Milk Tart(Old Style)",
+        mealType: "dessert",
+        mealSearch: ['pudding', 'milk', 'tart'],
+        isVege : true,
+        image:"milk-tart.JPG",
+        alt: "Picture of Milk Tart",
+        ingredients: [
+            '4 1/2 cups Milk',
+            '3 Tbsp Butter',
+            '3 Eggs',
+            '3/4 cup Sugar',
+            '3 Tbsp Cornflour (Maizena)',
+            '3 Tbsp Cake Flour',
+            '1 cup Butter',
+            '2 cups all-purpose flour',
+            '1/2 cup Sugar',
+            'Cinnamon'
+        ],
+        instructions:[
+            'Preheat the oven to 180 deg',
+            'Mix together the butter, flour and sugar',
+            'Press mixture into a tart pan',
+            'Bake for about 12-15 minutes, till a light brown',
+            'Remove from oven and allow to cool completely',
+            '',
+            'Boil together Milk and Butter',
+            'Mix eggs, sugar, cornflour and flour',
+            'Stir mixture into the milk and boil slowly for 10 minutes stirring continuously(NB)',
+            'Fill the cooled base with the boiled mixture and sprinkle cinnamon over the top',
+            'Allow to cool',
+        ],
+        notes: [
+            'I use self-raising flour for this recipe',
+            'Adding some cinnamon to the egg mixture gives it extra flavour',
+            'This recipe should give you 2 average (23cm) milk tarts'
+        ],
+        uuid: uuidv4()
+    },
+]
+
+
+    /*{
         name: "",
         mealType: "",
         mealSearch: [],
@@ -232,6 +274,4 @@ export const meals = [
 
         ],
         uuid: uuidv4()
-    },
-]
-
+    },*/

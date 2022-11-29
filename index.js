@@ -9,7 +9,12 @@ document.addEventListener('click', function(e){
     else if (e.target.id === "go-back"){
         handleBackBtn()
     }
+    else if (e.target.id === "vege-only"){
+        handleVegeClick(e.target.checked)
+    }
 })
+
+
 
 //HANDLE CHANGE ON CLICK OF MENU ITEM
 function handleSelectClick(mealId){
@@ -20,7 +25,6 @@ function handleSelectClick(mealId){
     meals.forEach(meal => {
         if (meal.uuid === mealId){
             getMealType(mealId)
-            console.log(meal.uuid, mealId)
         }
     })
 }
@@ -31,15 +35,25 @@ function handleBackBtn(){
     document.getElementById("meal-name").classList.toggle('hidden')
 }
 
-//MEAL SELECTION MENU
-function mealMenu(){
+
+//HANDLE VEGETERIAN ONLY OPTION OR NOT AND RENDER MENU
+function handleVegeClick(ticked){
+    let matchVege = ''
+    matchVege = meals.filter(meal=> {
+        if (ticked){
+            return meal.isVege === true
+        } else {
+            return meal
+        }
+   })
+   //MEAL SELECTION MENU
+
     let bfast = ''
     let salad = ''
     let main = ''
     let dessert = ''
     
-    
-    for (let meal of meals){
+    for (let meal of matchVege){
         if (meal.mealType === 'main'){
             main += `
             <div class="ontop" >
@@ -47,7 +61,6 @@ function mealMenu(){
                 <h5 class="thumbnail-name" id="select-${meal.uuid}" data-select="${meal.uuid}">${meal.name}</h5>
             </div>
             `
-
         }
         else if (meal.mealType === 'breakfast'){
             bfast += `
@@ -73,29 +86,29 @@ function mealMenu(){
             </div>
             `
         }
+        
     }
 
-    document.getElementById('breakfast').innerHTML += bfast
+    document.getElementById('breakfast').innerHTML = bfast
 
-    document.getElementById('salad').innerHTML += salad
+    document.getElementById('salad').innerHTML = salad
 
-    document.getElementById('mainMeal').innerHTML += main
+    document.getElementById('mainMeal').innerHTML = main
 
-    document.getElementById('dessert').innerHTML += dessert
+    document.getElementById('dessert').innerHTML = dessert
    
+
+   console.log(matchVege)
 }
-mealMenu()
 
 //RENDERS FULL RECIPE    
 function getMealType(mealId){
+    
     let mealHtml = ''
-    let newMeal = ''
     
     meals.filter(meal =>{
         if (meal.uuid === mealId){
            
-            
-       
         let ingredientsArray = meal.ingredients
         let ingredient = ingredientsArray.map((type) => {
             return `<li  class="ingredient">${type}</li>`
@@ -144,4 +157,9 @@ function getMealType(mealId){
     
     }
 
-getMealType()
+function render(){
+    handleVegeClick()
+    getMealType()
+}
+
+render()
