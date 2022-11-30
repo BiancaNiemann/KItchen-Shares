@@ -171,3 +171,28 @@ ul, ol {
     width: 100%;
     color: #463F3A;
 }
+
+.handy-box-left, .handy-box-right{
+    display: block;
+    background-color: #F4F3EE;
+    position: fixed;
+    padding: 15px;
+    border: 2px solid #E0AFA0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.handy-box-left:hover, .handy-box-right:hover{
+    background-color: #E0AFA0;
+    border: 2px solid #F4F3EE;
+    border-radius: 5px;
+}
+
+
+.handy-box-right{
+    margin-left: 1035px;
+}
+
+.handy-box-left{
+    margin-left: 30px;
+}

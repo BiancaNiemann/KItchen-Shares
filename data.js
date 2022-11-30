@@ -216,7 +216,7 @@ export const meals = [
         uuid: uuidv4()
     },
     {
-        name: "Uncle Rolys yummy Milk Tart(Old Style)",
+        name: "Uncle Roly's yummy Milk Tart(Old Style)",
         mealType: "dessert",
         mealSearch: ['pudding', 'milk', 'tart'],
         isVege : true,
