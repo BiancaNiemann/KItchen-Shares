@@ -33,6 +33,7 @@ function handleSelectClick(mealId){
 function handleBackBtn(){
     document.getElementById("meal-type-selections").classList.toggle('hidden')
     document.getElementById("meal-name").classList.toggle('hidden')
+    document.getElementById('hacks').classList.toggle('hidden')
 }
 
 
@@ -152,6 +153,8 @@ mealListing()
 
 //RENDERS FULL RECIPE    
 function getMealType(mealId){
+
+    document.getElementById('hacks').classList.toggle('hidden')
     
     let mealHtml = ''
     
