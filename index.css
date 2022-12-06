@@ -1,15 +1,10 @@
-html, body {
-    margin: 0;
-    padding: 0;
-}
-
 body{
     font-family: 'Quicksand', sans-serif;
     background-color: #BCB8B1;
     text-align: center;
 }
 
-.logo , .ontop, .meal-info{
+.logo , .ontop{
     display: flex;
     justify-content: center;
 }
@@ -52,14 +47,14 @@ h5 {
 
 .container{
     border: 0.35rem solid #8A817C;
-    width: 750px;
+    width: 98%;
     margin: 20px auto 1.5rem auto;
     border-radius: 10px;
     background-color: #F4F3EE;
 }
 
 .ontop{
-    width: 50%;
+    width: 90%;
     height: auto;
     margin: 20px auto 10px auto ;
     background-color: #F4F3EE;
@@ -105,6 +100,7 @@ h5 {
 
 .meal-info{
     border-bottom: 0.25rem solid #8A817C;
+    display: block;
 }
 
 .header {
@@ -117,24 +113,25 @@ h5 {
 .go-back{
     position: absolute;
     top: 10px;
-    margin-left: 650px;
+    margin-left: 85%;
     border: none;
     padding: 10px;
     border-radius: 5px;
     font-family: inherit;
     color:#8A817C;
     font-weight: bold;
-    background-color: #E0AFA0
+    background-color: #E0AFA0;
+    box-shadow: 0px 0px 0px black;
 }
 
 .ingredients {
-    border-right: 0.25rem solid #8A817C;
+
     padding-left: 1rem;
     padding-right: 1rem;
 }
 
 ul {
-    width: 200px;
+    width: 100%;
 }
 
 ul, ol {
@@ -173,9 +170,7 @@ ul, ol {
 }
 
 .handy-box-left, .handy-box-right{
-    display: block;
     background-color: #F4F3EE;
-    position: fixed;
     padding: 15px;
     border: 2px solid #E0AFA0;
     border-radius: 5px;
@@ -188,11 +183,36 @@ ul, ol {
     border-radius: 5px;
 }
 
-
-.handy-box-right{
-    margin-left: 1035px;
-}
-
-.handy-box-left{
-    margin-left: 30px;
+@media (min-width: 769px) {
+    .hacks-box{
+        display: flex;
+        position: fixed;
+        justify-content: space-between;
+        top: 180px;
+        width: 100%;
+    }
+    .handy-box-left, .handy-box-right{
+        width: 200px;
+    }
+    .handy-box-left {
+        margin-left: 50px;
+    }
+    .handy-box-right {
+        margin-right: 50px;
+    }
+    ul{
+        width: 200px;
+    }
+    .meal-info{
+        display: flex;
+    }
+    .container{
+        width: 55%
+    }
+    .ingredients{
+        border-right: 0.25rem solid #8A817C;
+    }
+    .ontop{
+        width: 50%;
+    }
 }

@@ -15,7 +15,6 @@ document.addEventListener('click', function(e){
 })
 
 
-
 //HANDLE CHANGE ON CLICK OF MENU ITEM
 function handleSelectClick(mealId){
     
@@ -45,8 +44,8 @@ function handleVegeClick(ticked){
         } else {
             return meal
         }
-   })
-   
+   }) 
+
    //MEAL SELECTION MENU
     let bfast = ''
     let salad = ''
@@ -99,6 +98,29 @@ function handleVegeClick(ticked){
 
 }
 
+//RENDERS HANDY-BOX ONE
+function handyBox(){
+
+}
+
+//RENDERS MEAL TYPE LIST
+function mealListing(){
+    let listing = ""
+
+    listing += `
+        <h2 class="meal-type">Breakfast</h2>
+        <div id="breakfast"></div>
+        <h2 class="meal-type">Salads</h2>
+        <div id="salad"></div>
+        <h2 class="meal-type">Main Meals</h2>
+        <div id="mainMeal"></div>
+        <h2 class="meal-type">Dessert</h2>
+        <div id="dessert" ></div>
+    `
+    return listing
+}
+document.getElementById('meal-type-selections').innerHTML = mealListing()
+
 //RENDERS FULL RECIPE    
 function getMealType(mealId){
     
@@ -146,18 +168,15 @@ function getMealType(mealId){
                 <ul class="notes">${note}</ul>
            </div>
         ` 
-        
-        
-    }
+        }
     document.getElementById('meal-name').innerHTML = mealHtml
     })
-        
-    
-    }
+}
 
 function render(){
     handleVegeClick()
     getMealType()
+    
 }
 
 render()
