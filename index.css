@@ -122,6 +122,7 @@ h5 {
     font-weight: bold;
     background-color: #E0AFA0;
     box-shadow: 0px 0px 0px black;
+    cursor: pointer;
 }
 
 .ingredients {
@@ -184,22 +185,6 @@ ul, ol {
 }
 
 @media (min-width: 769px) {
-    .hacks-box{
-        display: flex;
-        position: fixed;
-        justify-content: space-between;
-        top: 180px;
-        width: 100%;
-    }
-    .handy-box-left, .handy-box-right{
-        width: 200px;
-    }
-    .handy-box-left {
-        margin-left: 50px;
-    }
-    .handy-box-right {
-        margin-right: 50px;
-    }
     ul{
         width: 200px;
     }
@@ -214,5 +199,34 @@ ul, ol {
     }
     .ontop{
         width: 50%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hacks-box-left, .hacks-box-right{
+        display: flex;
+        flex-direction: column;
+    }
+    .hacks{
+        margin-top: -100%;
+    }
+    .hacks-box-right{
+        margin-top: -344px;
+    }
+    .handy-box-left, .handy-box-right{
+        width: 200px;
+        height: 300px;
+        margin-bottom: 10px;
+    }
+    .handy-box-left {
+        margin-right: auto;
+        margin-left: 50px;
+    }
+    .handy-box-right {
+        margin-left: auto; 
+        margin-right: 50px;
+    }
+    .adjust{
+        margin-top: -71.5%;
     }
 }

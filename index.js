@@ -15,6 +15,7 @@ document.addEventListener('click', function(e){
 })
 
 
+
 //HANDLE CHANGE ON CLICK OF MENU ITEM
 function handleSelectClick(mealId){
     
@@ -37,6 +38,7 @@ function handleBackBtn(){
 
 //HANDLE VEGETERIAN ONLY OPTION OR NOT AND RENDER MENU
 function handleVegeClick(ticked){
+    document.getElementById('hacks').classList.toggle('adjust')
     let matchVege = ''
     matchVege = meals.filter(meal=> {
         if (ticked){
@@ -44,8 +46,9 @@ function handleVegeClick(ticked){
         } else {
             return meal
         }
-   }) 
-
+    
+   })
+   
    //MEAL SELECTION MENU
     let bfast = ''
     let salad = ''
@@ -98,10 +101,35 @@ function handleVegeClick(ticked){
 
 }
 
-//RENDERS HANDY-BOX ONE
-function handyBox(){
+//RENDERS HANDY-BOX ON LEFT
+function handyBoxLeft(){
+    let handyBoxLeft = ""
 
+    handyBoxLeft += `
+                <div class="handy-box-left">
+                    <h3>box left</h3>
+                    <h5>Whats new in our kitchen!!</h5>
+                    <p>A kenwood mixer</p>
+                    <p>Making pasta</p>
+                </div>
+			`
+        document.getElementById("hacks-box-left").innerHTML += handyBoxLeft
 }
+
+//RENDERS HANDY-BOX ON RIGHT
+function handyBoxRight(){
+    let handyBoxRight = ""
+
+    handyBoxRight += `
+                <div class="handy-box-right">
+                    <h3>box-right</h3>
+                    <h5>Whats new in our kitchen!!</h5>
+                    <p>A kenwood mixer</p>
+                    <p>Making pasta</p>
+                </div>
+			`
+        document.getElementById("hacks-box-right").innerHTML += handyBoxRight
+    }
 
 //RENDERS MEAL TYPE LIST
 function mealListing(){
@@ -117,9 +145,10 @@ function mealListing(){
         <h2 class="meal-type">Dessert</h2>
         <div id="dessert" ></div>
     `
-    return listing
+    document.getElementById('meal-type-selections').innerHTML = listing
 }
-document.getElementById('meal-type-selections').innerHTML = mealListing()
+mealListing()
+
 
 //RENDERS FULL RECIPE    
 function getMealType(mealId){
@@ -168,15 +197,20 @@ function getMealType(mealId){
                 <ul class="notes">${note}</ul>
            </div>
         ` 
-        }
+        
+        
+    }
     document.getElementById('meal-name').innerHTML = mealHtml
     })
-}
+        
+    
+    }
 
 function render(){
     handleVegeClick()
     getMealType()
-    
+    handyBoxLeft()
+    handyBoxRight()
 }
 
 render()
