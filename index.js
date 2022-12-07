@@ -12,9 +12,9 @@ document.addEventListener('click', function(e){
     else if (e.target.id === "vege-only"){
         handleVegeClick(e.target.checked)
     }
-    else if(e.target.dataset.hacks){
-        handleHackClick (e.target.dataset.hacks)
-    }
+    //else if(e.target.dataset.hacks){
+     //   handleHackClick (e.target.dataset.hacks)
+    //}
 })
 
 //HANDLE HACK CLICK
@@ -39,13 +39,15 @@ function handleSelectClick(mealId){
 function handleBackBtn(){
     document.getElementById("meal-type-selections").classList.toggle('hidden')
     document.getElementById("meal-name").classList.toggle('hidden')
-    document.getElementById('hacks').classList.toggle('hidden')
+    document.getElementById('hacks-box-left').classList.toggle('hidden')
+    document.getElementById('hacks-box-right').classList.toggle('hidden')
+    document.getElementById('vege').classList.toggle('hidden')
 }
 
 
 //HANDLE VEGETERIAN ONLY OPTION OR NOT AND RENDER MENU
 function handleVegeClick(ticked){
-    document.getElementById('hacks').classList.toggle('adjust')
+
     let matchVege = ''
     matchVege = meals.filter(meal=> {
         if (ticked){
@@ -58,6 +60,7 @@ function handleVegeClick(ticked){
    
    //MEAL SELECTION MENU
     let bfast = ''
+    let soup = ''
     let salad = ''
     let main = ''
     let dessert = ''
@@ -65,6 +68,14 @@ function handleVegeClick(ticked){
     for (let meal of matchVege){
         if (meal.mealType === 'main'){
             main += `
+            <div class="ontop" >
+                <img src="./images/${meal.image}" alt="${meal.alt}" class="thumbnail">
+                <h5 class="thumbnail-name" id="select-${meal.uuid}" data-select="${meal.uuid}">${meal.name}</h5>
+            </div>
+            `
+        }
+        else if (meal.mealType === 'soup'){
+            soup += `
             <div class="ontop" >
                 <img src="./images/${meal.image}" alt="${meal.alt}" class="thumbnail">
                 <h5 class="thumbnail-name" id="select-${meal.uuid}" data-select="${meal.uuid}">${meal.name}</h5>
@@ -95,7 +106,6 @@ function handleVegeClick(ticked){
             </div>
             `
         }
-        
     }
 
     document.getElementById('breakfast').innerHTML = bfast
@@ -105,6 +115,8 @@ function handleVegeClick(ticked){
     document.getElementById('mainMeal').innerHTML = main
 
     document.getElementById('dessert').innerHTML = dessert
+
+    document.getElementById('soup').innerHTML = soup
 
 }
 
@@ -119,9 +131,9 @@ function handyBoxLeft(){
         }) 
         
         handyBoxLeft += `
-        <div class="handy-box-left">
-            <h3>Handy Hacks!!</h3>
-            <h5  id="hack-title-left" data-hacks=${hack.id}>- ${hack.title}<h5>
+        <div class="handy-box">
+            <h3 class="handy-box-title">Handy Hacks!!</h3>
+            <h5 id="hack-title-left" data-hacks=${hack.id}>- ${hack.title}<h5>
             <ul class="hack-title">${instruct}</ul>
         </div>
         `
@@ -134,9 +146,9 @@ function handyBoxRight(){
     let handyBoxRight = ""
 
     handyBoxRight += `
-                <div class="handy-box-right">
-                    <h3 id="hack-title-right" data-hacks=${hacks.id}>box-right</h3>
-                    <h5>Whats new in our kitchen!!</h5>
+                <div class="handy-box">
+                    <h3 class="handy-box-title">Moms Blog!!</h3>
+                    <h5 id="hack-title-right" data-hacks=${hacks.id}>Whats new in our kitchen!!</h5>
                     <p>A kenwood mixer</p>
                     <p>Making pasta</p>
                 </div>
@@ -157,6 +169,8 @@ function mealListing(){
         <div id="mainMeal"></div>
         <h2 class="meal-type">Dessert</h2>
         <div id="dessert" ></div>
+        <h2 class="meal-type">Soups</h2>
+        <div id="soup" ></div>
     `
     document.getElementById('meal-type-selections').innerHTML = listing
 }
@@ -166,7 +180,9 @@ mealListing()
 //RENDERS FULL RECIPE    
 function getMealType(mealId){
 
-    document.getElementById('hacks').classList.toggle('hidden')
+    document.getElementById('hacks-box-left').classList.toggle('hidden')
+    document.getElementById('hacks-box-right').classList.toggle('hidden')
+    document.getElementById('vege').classList.toggle('hidden')
     
     let mealHtml = ''
     

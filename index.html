@@ -12,19 +12,19 @@
 		<h1>Kitchen Shares</h1>
 		<img class="birdy" src="./images/birdy.png" alt="small bird in tree logo">
 	</header>
-    <div>
-		<div class="vege">
-			<label for="vege-only" class="veg-option">Only display Vegetarian meals (tick here)</label>
-			<input id="vege-only" type="checkbox">
+	<section class="main-section">
+		<div class="middle-section">
+			<div class="vege hidden" id="vege">
+				<label for="vege-only" class="veg-option">Only display Vegetarian meals (tick here)</label>
+				<input id="vege-only" type="checkbox">
+			</div>
+			<div class="" id="meal-type-selections">
+			</div>
+			<div id="meal-name" class="meal-type hidden"></div>
 		</div>
-		<div class="" id="meal-type-selections">
-		</div>
-		<div id="meal-name" class="meal-type hidden"></div>
-    </div>
-		<div class="hacks adjust hidden" id="hacks">
-		<div class="hacks-box-left" id="hacks-box-left"></div>
-		<div class="hacks-box-right" id="hacks-box-right"></div>
-		</div>
+			<div class="hacks-box-left hidden" id="hacks-box-left"></div>
+			<div class="hacks-box-right hidden" id="hacks-box-right"></div>
+	</section>
 	<script src="index.js" type="module"></script>
 
 </body>

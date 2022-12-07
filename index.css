@@ -1,3 +1,7 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
 body{
     font-family: 'Quicksand', sans-serif;
     background-color: #BCB8B1;
@@ -47,8 +51,7 @@ h5 {
 
 .container{
     border: 0.35rem solid #8A817C;
-    width: 98%;
-    margin: 20px auto 1.5rem auto;
+    width: 100%;
     border-radius: 10px;
     background-color: #F4F3EE;
 }
@@ -64,6 +67,11 @@ h5 {
     justify-content: start;
 }
 
+.ontop:hover{
+    background-color: #E0AFA0;
+    border: 0.25rem solid #F4F3EE;
+}
+
 .meal-type{
     color: #8A817C;
     text-shadow: 0px 0px 0px black;
@@ -75,19 +83,19 @@ h5 {
 }
 
 .thumbnail{
-    width: 50px;
-    height: 50px;
-    margin: 20px;
+    width: 75px;
+    height: 75px;
+    margin: 10px;
     border: 0.25rem solid #8A817C;
     border-radius: 10px;
 }
 
-.thumbnail-name{
-    color: #463F3A;
+.ontop:hover .thumbnail{
+    border: 0.25rem solid #F4F3EE;
 }
 
-.thumbnail-name:hover{
-    color: #E0AFA0;
+.thumbnail-name{
+    color: #463F3A;
 }
 
 .image {
@@ -113,12 +121,12 @@ h5 {
 .go-back{
     position: absolute;
     top: 10px;
-    margin-left: 85%;
+    margin-left: 92%;
     border: none;
     padding: 10px;
     border-radius: 5px;
     font-family: inherit;
-    color:#8A817C;
+    color:#F4F3EE;
     font-weight: bold;
     background-color: #E0AFA0;
     box-shadow: 0px 0px 0px black;
@@ -161,76 +169,68 @@ ul, ol {
     text-decoration: underline;
 }
 
-.hidden{
-    display: none;
-}
-
 .vege{
     width: 100%;
     color: #463F3A;
 }
 
-.handy-box-left, .handy-box-right{
+.handy-box{
     background-color: #F4F3EE;
     padding: 15px;
     border: 2px solid #E0AFA0;
     border-radius: 5px;
     cursor: pointer;
+    height: 100%;
+    margin-top: 5.5em;
 }
 
-.handy-box-left:hover, .handy-box-right:hover{
+.handy-box:hover {
     background-color: #E0AFA0;
     border: 2px solid #F4F3EE;
     border-radius: 5px;
 }
 
-@media (min-width: 769px) {
+.handy-box-title{
+    color: #E0AFA0;
+}
+
+.handy-box:hover .handy-box-title{
+    color: #F4F3EE;
+}
+
+@media (min-width: 880px) {
     ul{
         width: 200px;
     }
     .meal-info{
         display: flex;
     }
-    .container{
-        width: 55%
-    }
     .ingredients{
         border-right: 0.25rem solid #8A817C;
     }
-    .ontop{
-        width: 50%;
+    .main-section{
+        display: flex;
+        flex-direction: row;
+    }
+    .middle-section{
+        order:2;
+        width: 85%;
+        margin: 0 auto;
+    }
+    .hacks-box-right, .hacks-box-left{
+        width:25%;
+        min-height: 200px;
+    }
+    .hacks-box-left{
+        order: 1;
+        margin-left: 2%;
+    }
+    .hacks-box-right{
+        order: 3;
+        margin-right: 2%;
     }
 }
 
-@media (min-width: 1200px) {
-    .hacks-box-left, .hacks-box-right{
-        display: flex;
-        flex-direction: column;
-    }
-    .hacks{
-        margin-top: -100%;
-    }
-    .hacks-box-right{
-        margin-top: -644px;
-    }
-    .handy-box-left, .handy-box-right{
-        width: 200px;
-        height: 600px;
-        margin-bottom: 10px;
-    }
-    .handy-box-left {
-        margin-right: auto;
-        margin-left: 50px;
-    }
-    .handy-box-right {
-        margin-left: auto; 
-        margin-right: 50px;
-    }
-    .adjust{
-        margin-top: -71.5%;
-    }
-    .hack-title {
-        width: 100%;
-        text-align: left;
-    }
+.hidden{
+    display: none;
 }
