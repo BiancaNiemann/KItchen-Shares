@@ -211,11 +211,11 @@ ul, ol {
         margin-top: -100%;
     }
     .hacks-box-right{
-        margin-top: -344px;
+        margin-top: -644px;
     }
     .handy-box-left, .handy-box-right{
         width: 200px;
-        height: 300px;
+        height: 600px;
         margin-bottom: 10px;
     }
     .handy-box-left {
@@ -228,5 +228,9 @@ ul, ol {
     }
     .adjust{
         margin-top: -71.5%;
+    }
+    .hack-title {
+        width: 100%;
+        text-align: left;
     }
 }

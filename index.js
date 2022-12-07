@@ -1,5 +1,5 @@
 import { meals } from '/data.js'
-
+import { hacks } from './hacks.js'
 
 //EVENT LISTENERS
 document.addEventListener('click', function(e){
@@ -12,9 +12,15 @@ document.addEventListener('click', function(e){
     else if (e.target.id === "vege-only"){
         handleVegeClick(e.target.checked)
     }
+    else if(e.target.dataset.hacks){
+        handleHackClick (e.target.dataset.hacks)
+    }
 })
 
-
+//HANDLE HACK CLICK
+function handleHackClick(hackId){
+    console.log(hackId)
+}
 
 //HANDLE CHANGE ON CLICK OF MENU ITEM
 function handleSelectClick(mealId){
@@ -105,16 +111,22 @@ function handleVegeClick(ticked){
 //RENDERS HANDY-BOX ON LEFT
 function handyBoxLeft(){
     let handyBoxLeft = ""
-
-    handyBoxLeft += `
-                <div class="handy-box-left">
-                    <h3>box left</h3>
-                    <h5>Whats new in our kitchen!!</h5>
-                    <p>A kenwood mixer</p>
-                    <p>Making pasta</p>
-                </div>
-			`
-        document.getElementById("hacks-box-left").innerHTML += handyBoxLeft
+    hacks.forEach(hack =>{
+        let instruct = ''
+        hack.instruct.forEach(item =>{
+        instruct += `<li>${item}</li>`
+        return instruct
+        }) 
+        
+        handyBoxLeft += `
+        <div class="handy-box-left">
+            <h3>Handy Hacks!!</h3>
+            <h5  id="hack-title-left" data-hacks=${hack.id}>- ${hack.title}<h5>
+            <ul class="hack-title">${instruct}</ul>
+        </div>
+        `
+    })
+	document.getElementById("hacks-box-left").innerHTML += handyBoxLeft
 }
 
 //RENDERS HANDY-BOX ON RIGHT
@@ -123,7 +135,7 @@ function handyBoxRight(){
 
     handyBoxRight += `
                 <div class="handy-box-right">
-                    <h3>box-right</h3>
+                    <h3 id="hack-title-right" data-hacks=${hacks.id}>box-right</h3>
                     <h5>Whats new in our kitchen!!</h5>
                     <p>A kenwood mixer</p>
                     <p>Making pasta</p>
