@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
 
 export const meals = [
-    {
+    /*{
         name: "Oma's Mac 'n Cheese",
         mealType: 'main',
         mealSearch: ['pasta', 'cheese'],
@@ -38,7 +38,7 @@ export const meals = [
             'Must admit, adding sliced green pepper along with the onions allows for a warm Italian flavour.'
         ],
         uuid: uuidv4()
-    },
+    },*/
     {
         name: "Dinky's Snail shaped pasta with tomato and Lamb",
         mealType: 'main',

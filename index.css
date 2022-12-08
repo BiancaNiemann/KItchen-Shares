@@ -181,14 +181,18 @@ ul, ol {
 }
 
 .handy-box{
-    background-color: #45c7fa9f;
+    background-color: #8A817C;
     padding: 15px;
     border: 2px solid #E0AFA0;
     border-radius: 5px;
     cursor: pointer;
     height: 100%;
     width: 250px;
-    opacity: 0.75;
+    opacity: 0.6;
+}
+
+.handy-box li, .handy-box p{
+    color: #F4F3EE;
 }
 
 .handy-box:hover {

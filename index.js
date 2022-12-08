@@ -147,7 +147,7 @@ function handyBoxRight(){
 
     handyBoxRight += `
                 <div class="handy-box">
-                    <h3 class="handy-box-title">Moms Blog!!</h3>
+                    <h3 class="handy-box-title">The latest news!!</h3>
                     <h5 id="hack-title-right" data-hacks=${hacks.id}>Whats new in our kitchen!!</h5>
                     <p>A kenwood mixer</p>
                     <p>Making pasta</p>
