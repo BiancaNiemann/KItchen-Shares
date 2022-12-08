@@ -162,15 +162,15 @@ function mealListing(){
 
     listing += `
         <h2 class="meal-type">Breakfast</h2>
-        <div id="breakfast"></div>
+        <div id="breakfast" class="grid-box"></div>
         <h2 class="meal-type">Salads</h2>
-        <div id="salad"></div>
+        <div id="salad" class="grid-box"></div>
         <h2 class="meal-type">Main Meals</h2>
-        <div id="mainMeal"></div>
+        <div id="mainMeal" class="grid-box"></div>
         <h2 class="meal-type">Dessert</h2>
-        <div id="dessert" ></div>
+        <div id="dessert" class="grid-box"></div>
         <h2 class="meal-type">Soups</h2>
-        <div id="soup" ></div>
+        <div id="soup" class="grid-box"></div>
     `
     document.getElementById('meal-type-selections').innerHTML = listing
 }

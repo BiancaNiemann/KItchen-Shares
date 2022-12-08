@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
 
 export const meals = [
     {
-        name: "Oma's Mac n Cheese",
+        name: "Oma's Mac 'n Cheese",
         mealType: 'main',
         mealSearch: ['pasta', 'cheese'],
         image:'mac-n-cheese.jpg',
@@ -40,7 +40,7 @@ export const meals = [
         uuid: uuidv4()
     },
     {
-        name: "Dinky's Snail shaped pasta with tomato and Lamb or Mutton",
+        name: "Dinky's Snail shaped pasta with tomato and Lamb",
         mealType: 'main',
         mealSearch: ['pasta', 'mutton', 'lamb'],
         isVege : false,
